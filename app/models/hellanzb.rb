@@ -9,7 +9,7 @@ class Hellanzb
       @server.call('system.listMethods').each do |m|
         if m.eql?("down") or m.eql?("up") or m.eql?("dequeue") or 
            m.eql?("last") or m.eql?("next") or m.eql?("force") or
-           m.eql?("enqueue")
+           m.eql?("enqueue") or m.eql?("enqueueurl") or m.eql?("enqueuenewzbin")
 
           self.class.send(:define_method, m) {|id| @server.call(m,id)} 
         else

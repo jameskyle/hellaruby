@@ -5,41 +5,46 @@ class NzbManager < Application
     else
       flash[:notice] = "Choose a file first!"
     end
-    redirect "/status"
+    redirect "/"
   end
 
   def get_nzb_from_url
-    @hella.enqueue(params[:nzb_url])
-    redirect "/status"
+    @hella.enqueueurl(params[:nzb_url])
+    redirect "/"
   end
 
-   def queue_down
+  def get_msgid_from_newzbin
+    @hella.equeuenewzbin(params[:msgid])
+    redirect "/"
+  end
+
+  def queue_down
     @hella.down(params[:id])
-    redirect "/status"
+    redirect "/"
   end
   def queue_up
     @hella.up(params['id'])
-    redirect "/status"
+    redirect "/"
   end
   def dequeue
     @hella.dequeue(params['id'])
-    redirect "/status"
+    redirect "/"
   end
   def queue_last
     @hella.last(params['id'])
-    redirect "/status"
+    redirect "/"
   end
   def queue_first
     @hella.next(params['id'])
-    redirect "/status"
+    redirect "/"
   end
   def queue_force
     @hella.force(params['id'])
-    redirect "/status"
+    redirect "/"
   end
   def clear_queue
     @hella.clear
-    redirect "/status"
+    redirect "/"
   end
   def queue_list
     partial "queue_list"
