@@ -230,4 +230,4 @@ Hellanzb.KEEP_FILE_TYPES = [ 'nfo', 'txt' ]
 #              '10m 37s'
 # parMessage: optional post processing message. e.g. '(No Pars)'
 #Hellanzb.EXTERNAL_HANDLER_SCRIPT = '~/bin/post_hellanzb.sh'
-Hellanzb.EXTERNAL_HANDLER_SCRIPT = '/path/to/hellaruby/scripts/tar_postprocess.rb'
+#Hellanzb.EXTERNAL_HANDLER_SCRIPT = '/path/to/hellaruby/scripts/tar_postprocess.rb'
