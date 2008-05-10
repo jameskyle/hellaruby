@@ -1,0 +1,8 @@
+<% if !flash[:notice].nil? then %>
+  <span style='color:green;'><%= flash[:notice] %></span>
+<% end %>
+<form action="/nzb_manager/upload_nzb" method="post" enctype="multipart/form-data">
+  <div id='nzb_input'><input type='file' name='file' class='file' /></div>
+  <div><input type='submit' value='Upload NZB' class='submit' /></div>
+</form>
+

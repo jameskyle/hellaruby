@@ -1,0 +1,12 @@
+<h1>Hellanzb Server Info</h1>
+<% @hella.status.each do |stat| %>
+    <% if !stat[0].eql?("queued")  and !stat[0].eql?("currently_downloading") and 
+    !stat[0].eql?("currently_processing") and !stat[0].eql?("log_entries") and 
+    !stat[0].eql?("config_file") then %>
+    <div class='quote' style='float:left'>
+      <div class='stats'>
+        <%= stat[0].split("_").join(" ").capitalize %>: <b><%= stat[1] %></b>
+      </div>
+    </div>
+    <% end %>
+<% end %>

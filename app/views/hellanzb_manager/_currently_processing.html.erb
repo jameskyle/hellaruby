@@ -1,0 +1,13 @@
+<h1>
+    Currently Processing: 
+</h1>
+    <span id='currently_processing'>
+      <% if !@hella.status['currently_processing'].empty? then %> 
+        <%= @hella.status['currently_processing'][0]['nzbName'] %>
+      <% else %>
+        None
+      <% end %>
+    </span>
+    <script type='text/javascript'>sndReq();</script>
+</div>
+

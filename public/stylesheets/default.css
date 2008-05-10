@@ -1,0 +1,170 @@
+/*#############################################################
+Name: Blackbox
+Date: 2006-06-01
+Author: Viktor Persson
+URL: http://arcsin.se
+
+Feel free to use and modify but please provide credits.
+#############################################################*/
+
+/* Standard elements */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: #999;
+	text-decoration: none;
+}
+body {
+	background: #000 url(/images/bg.png) repeat-x fixed left bottom;
+	color: #555;
+	margin: 20px 0;
+	text-align: center;
+	font: normal 0.7em sans-serif,Arial;
+}
+ul {
+	margin: 12px 0;
+}
+li {
+	list-style: url(/images/li.gif);
+	margin-left: 18px;
+}
+code {
+	font: normal 1em "Lucida Sans Unicode",serif;
+	background: url(/images/bgcode.gif);
+	color: #888;
+	display: block;
+	padding: 3px 6px;
+	white-space: pre;
+	margin-bottom: 12px;
+}
+
+
+/* Misc */
+div.quote {
+	margin-bottom: 12px;
+	font: normal 1.1em "Lucida Sans Unicode",serif;
+	/*background: url(/images/quote.gif) no-repeat;*/
+	padding-left: 28px;
+	color: #666;
+}
+div.quote div.stats {
+  height: 15px;
+  width:  100px;
+  padding-top: 10px;
+}
+div.quote div.stats b {
+  color: green;
+}
+/* Progress Bar */
+div#rate {
+  display: inline;
+  float: right;
+}
+#progress_item h1 span,div#rate,span#currently_processing {color: green;}
+#progress_container {
+height: 15px;
+width:80%;
+border: thin solid white;
+margin: auto;
+overflow: hidden;
+}
+#progress_text {
+  float: left;
+  padding-left: 45%;
+  color: blue;
+}
+#progress_bar {
+  height: 100%;
+  width: 0%;
+  background: green;
+}
+
+/* Main structure */
+.main {
+	background: #000; 
+	border: 3px double #EEE; 
+	border-color: #141414 #202020 #222 #202020; 
+	margin: 20px auto 4px auto; 
+	text-align: left;
+	width: 600px; 
+}
+
+
+/* Header */
+.gfx {
+	background: #222 url(/images/dark_pixel.jpg) no-repeat;
+	height: 240px;
+}
+.gfx h1 {
+/*	color: #111;*/
+  color: #ffff55;
+	font: normal 2.6em Tahoma,sans-serif;
+	padding: 16px 20px;
+}
+/* Side Bar */
+.sidebar {
+  padding: 15px;
+  width: 200px;
+  border: thin solid white;
+  float: left;
+}
+.sidebar div {
+  float:left;
+  padding-top: 10px;
+}
+/* Menu */
+.menu a ,.menu .spacer{
+	background: #000 url(/images/bgmenu.png) repeat-x;
+	border-right: 1px solid #222;
+	border-top: 1px solid #1A1A1A;
+	color: #444;
+	font-size: 1.2em;
+	float: left;
+	padding-top: 4px;
+	width: 149px; height: 45px;
+}
+.menu a span {
+	padding-left: 6px;
+}
+.menu a:hover {
+	background-position: left bottom;
+	color: #666;
+}
+.menu a#last {
+	width: 150px;
+	border-right: none;
+}
+
+
+/* Content */
+.content {
+	border-top: 1px solid #1A1A1A;
+	background: #1A1A1A;
+	clear: both;
+}
+.content h1 {
+	margin: 0 0 4px;
+	font: bold 1.1em sans-serif,Arial;
+	color: #666;
+}
+.content p {
+	margin: 0 0 12px;
+}
+.item {
+	background: #030303 url(/images/bgitem.gif) repeat-x;
+	padding: 8px 10px;
+}
+
+
+/* Footer */
+.footer {
+	padding: 5px;
+	background: #0A0A0A;
+	color: #666;
+}
+
+#nzb_input input {
+  color: green;
+}

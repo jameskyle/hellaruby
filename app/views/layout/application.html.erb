@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<link rel="stylesheet" type="text/css" href="/stylesheets/default.css"/>
+<script type="text/javascript" src="/javascripts/download_status.js" ></script>
+<script type="text/javascript" src="/javascripts/jquery.js" ></script>
+<script type="text/javascript" src="/javascripts/app.js" ></script>
+<title>Hellanzb: Status</title>
+</head>
+<body>
+  <div class='sidebar'>
+    <%= partial "/nzb_manager/upload_nzb" %>
+  </div>
+  <div class="main">
+	<div class="gfx"><h1>Hellanzb</h1></div>
+  <div class="menu">
+    <%- if params[:controller].eql?("status") then %>
+    <%= link_to "<span>File List</span>","/file_manager/list" %>
+    <%- elsif params[:controller].eql?("file_manager") then %>
+    <%= link_to "<span>Status Page</span>","/status" %>
+    <%- end %>
+
+    <%- if @hella.status['is_paused'] then %>
+      <%= link_to "<span>Resume Hellanzb</span>", "/hellanzb_manager/resume" %>
+    <%- else %>
+      <%= link_to "<span>Pause Hellaznb</span>", "/hellanzb_manager/pause" %>
+      <%- end %>
+      <%= link_to "<span>Clear Queue</span>", url(:controller => "nzb_manager",
+        :action =>"clear_queue"), :class => "confirm clear" %>
+      <%= link_to "<span>Cancel Download</span>", url(:controller => "file_manager",
+                  :action =>"cancel_download"), :class => "confirm cancel" %>
+	</div>
+	<div class="content">
+          <%= catch_content :layout %>
+	<div class="footer">&copy; 2006 <a href="index.html">Hellanzb</a>. Design by <a href="http://arcsin.se">Arcsin</a></div>
+</div>
+
+  </body>
+</html>

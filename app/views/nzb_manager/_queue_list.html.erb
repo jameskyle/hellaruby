@@ -1,0 +1,17 @@
+<h1>Queued</h1>
+<p>
+<ul>
+  <% @hella.list.each do |item| %>
+    <%= link_to "[-]", "/nzb_manager/queue_down/#{item['id']}" %>
+    <%= link_to "[+]", "/nzb_manager/queue_up/#{item['id']}" %>
+    <%= link_to "[last]", "/nzb_manager/queue_last/#{item['id']}" %>
+    <%= link_to "[first]", "/nzb_manager/queue_first/#{item['id']}" %>
+    <%= link_to "[download now]", "/nzb_manager/queue_force/#{item['id']}" %>
+  <%= item['nzbName'].capitalize %>
+  <%= link_to "[delete]", "/nzb_manager/dequeue/#{item['id']}" %><br />
+<% end %>
+</ul>
+</p>
+<div class='quote'>
+</div>
+

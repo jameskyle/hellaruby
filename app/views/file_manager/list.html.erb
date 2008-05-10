@@ -1,0 +1,25 @@
+<ul>
+<% @dirs.each do |name,files| %>
+  <div class='quote'>
+    <li>
+      <%= name %>&nbsp;&nbsp;<%= link_to "[delete]",
+        url(:controller => 'file_manager',:action => 'delete',
+            :name => name), :class => "confirm delete" %>
+        <ul>
+          <% files.each do |file| %>
+            <li>
+              <%= file %>&nbsp;&nbsp;<%= link_to "[download]",
+                url(:controller => 'file_manager',:action => 'download_file', 
+                    :name => name+"/"+file) %>
+              <%= link_to "[delete]",
+                url(:controller => 'file_manager',:action => 'delete',
+                    :name => name+"/"+file), :class => "confirm delete" %>
+
+            </li>
+          <% end %>
+        </ul>
+
+    </li>
+  </div>
+<% end %>
+</ul>
