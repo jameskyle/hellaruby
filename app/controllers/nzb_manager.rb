@@ -42,15 +42,6 @@ class NzbManager < Application
     redirect "/status"
   end
   def queue_list
-    # To Do: output html for queue list
-    @hella.list.each do |item|
-     puts  %Q! link_to "[-]", "/nzb_manager/queue_down/#{item['id']}"
-      link_to "[+]", "/nzb_manager/queue_up/#{item['id']}" 
-      link_to "[last]", "/nzb_manager/queue_last/#{item['id']}"
-      link_to "[first]", "/nzb_manager/queue_first/#{item['id']}"
-      link_to "[download now]", "/nzb_manager/queue_force/#{item['id']}"
-   item['nzbName'].capitalize
-    link_to "[delete]", "/nzb_manager/dequeue/#{item['id']}" <br />!
-   end 
+    partial "queue_list"
   end
 end

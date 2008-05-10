@@ -7,4 +7,7 @@ class HellanzbManager < Application
     @hella.pause
     redirect "/status"
   end
+  def server_info
+    partial "server_info"
+  end
 end

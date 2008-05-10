@@ -4,7 +4,7 @@ class Hellanzb
 
   def initialize 
     begin
-      @server ||= XMLRPC::Client.new2("http://hellanzb:changeme@localhost:8760")
+      @server ||= XMLRPC::Client.new2(HELLA_URL)
 
       @server.call('system.listMethods').each do |m|
         if m.eql?("down") or m.eql?("up") or m.eql?("dequeue") or 
@@ -17,7 +17,7 @@ class Hellanzb
         end
       end
     rescue
-      system(HELLA_BIN+" -D")
+      system(HELLA_BIN+" -c #{Merb.root}/config/hellanzb.conf -D")
       retry
     end
 

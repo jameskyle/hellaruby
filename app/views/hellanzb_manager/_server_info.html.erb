@@ -5,7 +5,12 @@
     !stat[0].eql?("config_file") then %>
     <div class='quote' style='float:left'>
       <div class='stats'>
+        <% if stat[0].to_s.downcase.eql?('time') then %>
+          <%= stat[0].split("_").join(" ").capitalize %>: 
+          <b><%= stat[1].hour %>:<%= stat[1].min %>:<%= stat[1].sec %></b>
+        <% else %>
         <%= stat[0].split("_").join(" ").capitalize %>: <b><%= stat[1] %></b>
+        <% end %>
       </div>
     </div>
     <% end %>

@@ -1,7 +1,8 @@
-# Make the app's "gems" directory a place where gems are loaded from
-HELLA_ROOT = "/opt/hellanzb/"
+# Configuration of the hellanzb.py binary
+HELLA_URL = "http://hellanzb:changeme@localhost:8760"
 HELLA_BIN  = "/opt/local/bin/hellanzb.py"
 
+# Make the app's "gems" directory a place where gems are loaded from
 Gem.clear_paths
 Gem.path.unshift(Merb.root / "gems")
 
