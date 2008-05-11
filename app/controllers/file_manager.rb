@@ -4,13 +4,18 @@ class FileManager < Application
     redirect "/status/"
   end
   def download_progress
-    @hella.status['percent_complete'].to_s << "|" << 
-      @hella.status['rate'].to_s
+    result = @hella.percent_complete.to_s << "|" << 
+      @hella.rate.to_s 
+    if !@hella.currently_downloading.nil? then
+      result << "|" << @hella.currently_downloading['nzbName'] 
+    else
+      result << "|" << "none"
+    end
+    result
   end
   def processing
-    if !@hella.status['currently_processing'].empty? then
-      Merb.logger.info("Processing: "+@hella.status['currently_processing'].inspect)
-      @hella.status['currently_processing'][0]['nzbName']
+    if !@hella.currently_processing.nil? then
+      @hella.currently_processing['nzbName']
     else
       "None"
     end

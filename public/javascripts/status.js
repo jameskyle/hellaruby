@@ -46,12 +46,13 @@ function handleResponse() {
     update = response.split("|")
     if(response.indexOf('|' != -1)) {
       document.getElementById("progress_bar").style.width = update[0] + "%";
-      document.getElementById("rate").innerHTML = update[1]+"Kb/s";
+      document.getElementById("rate").innerHTML = update[1]+"KB/s";
       document.getElementById("progress_text").innerHTML = update[0]+"&#37;";
+      document.getElementById("nzb_name").innerHTML = update[2];
     }
     else {
       document.getElementById("rate").innerHTML = "0Kb/s"; 
-    }
+   }
     
     }
   else if(http2.readyState == 4) {

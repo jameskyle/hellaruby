@@ -41,7 +41,12 @@ class Hellanzb
       #  total_dl_mb
       
       status.each do |s|
-        self.class.send(:define_method, s[0]) {@server.call("status")[s[0]]}
+        if s[0].eql?('currently_downloading') or 
+           s[0].eql?('currently_processing')then
+          self.class.send(:define_method, s[0]) {@server.call("status")[s[0]][0]}
+        else
+          self.class.send(:define_method, s[0]) {@server.call("status")[s[0]]}
+        end
       end
     rescue Errno::ECONNREFUSED
       system(HELLA_BIN+" -c #{Merb.root}/config/hellanzb.conf -D")

@@ -1,14 +1,14 @@
   <h1>
     Currently Downloading: 
-    <span>
-      <%= @hella.status['currently_downloading'][0]['nzbName'] if !@hella.status['currently_downloading'].empty? %>
+    <span id='nzb_name'>
+      <%= @hella.currently_downloading['nzbName'] if !@hella.currently_downloading.nil? %>
     </span>
-    <div class='quote' id='rate'><%= @hella.status['rate'] %>Kb/s</div>
+    <div class='quote' id='rate'><%= @hella.rate %>KB/s</div>
   </h1>
   <p>
     <div id='progress_container'>
       <div id='progress_text'>
-        <%= @hella.status['percent_complete'] %>&#37;
+        <%= @hella.percent_complete %>&#37;
       </div>
       <div id='progress_bar'></div>
   </p>
