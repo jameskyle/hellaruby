@@ -50,8 +50,8 @@ div.quote {
 	color: #666;
 }
 div.quote div.stats {
-  height: 15px;
-  width:  100px;
+  height: 5px;
+  width:  150px;
   padding-top: 10px;
 }
 div.quote div.stats b {
