@@ -58,11 +58,11 @@ div.quote div.stats b {
   color: green;
 }
 /* Progress Bar */
-div#rate {
-  display: inline;
-  float: right;
+span#rate {
+  padding-left: 325px;
 }
-#progress_item h1 span,div#rate,span#currently_processing {color: green;}
+#progress_item h1 span,span#rate,span#currently_processing {color: green;}
+
 #progress_container {
 height: 15px;
 width:80%;
@@ -164,7 +164,6 @@ overflow: hidden;
 	background: #0A0A0A;
 	color: #666;
 }
-
 #nzb_input input {
   color: green;
 }
