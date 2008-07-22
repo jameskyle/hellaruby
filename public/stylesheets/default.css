@@ -59,7 +59,7 @@ div.quote div.stats b {
 }
 /* Progress Bar */
 span#rate {
-  padding-left: 325px;
+  padding-left: 315px;
 }
 #progress_item h1 span,span#rate,span#currently_processing {color: green;}
 
