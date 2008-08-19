@@ -1,5 +1,5 @@
 module Merb
-module FileManagerHelper
-  
+  module FileManagerHelper
+
   end
-end
+end # Merb

@@ -1,9 +1,10 @@
 #!/usr/bin/ruby
+require 'pathname'
 
 if ARGV.empty?
   port = "5000"
 else
   port = ARGV[0]
 end
-cmd = "merb -d -e production -p #{port}"
+cmd = "merb -d -e production -p #{port} -m #{Pathname.new(File.join(File.dirname(__FILE__),"../")).realpath}"
 system(cmd)

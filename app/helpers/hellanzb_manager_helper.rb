@@ -1,4 +1,5 @@
 module Merb
   module HellanzbManagerHelper
+
   end
-end
+end # Merb

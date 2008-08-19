@@ -1,5 +1,5 @@
 module Merb
-module NzbManagerHelper
-  
+  module NzbManagerHelper
+
   end
-end
+end # Merb

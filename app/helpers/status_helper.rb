@@ -1,5 +1,5 @@
 module Merb
-module StatusHelper
-  
+  module StatusHelper
+
   end
-end
+end # Merb
